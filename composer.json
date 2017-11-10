@@ -4,7 +4,6 @@
     "keywords": [ "alipay", "web", "sdk"],
     "type": "library",
     "license": "MIT",
-    "minimum-stability":"dev",
     "authors": [
         {
             "name": "saviorlv",
