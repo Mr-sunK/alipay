@@ -1,7 +1,7 @@
 {
     "name": "saviorlv/alipay",
-    "description": "Alipay web SDK for PHP",
-    "keywords": [ "alipay", "web", "sdk"],
+    "description": "alipay(web)",
+    "keywords": ["webpay", "alipay"],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,12 +10,13 @@
             "email": "1042080686@qq.com"
         }
     ],
+    "minimum-stability": "stable",
     "require": {
-        "php": ">=5.5.0"
+        "PHP": ">= 5.4"
     },
-    "autoload": {
+	"autoload": {
         "psr-4": {
-            "Saviorlv\\Alipay\\": "src/"
+            "Saviorlv\\Alipay\\" : "src/"
         }
     }
 }

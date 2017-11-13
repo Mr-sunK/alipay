@@ -13,9 +13,9 @@ class Alipay
 {
     protected $config;
 
-    public function __construct(array $config)
+    public function __construct($config)
     {
-        $this->config = $config;
+        $this->config =$config;
     }
 
     /**
