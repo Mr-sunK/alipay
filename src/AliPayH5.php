@@ -6,7 +6,7 @@ use MrK\AliPayH5\Sdk\Pagepay\Service\AlipayTradeService;
 use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeCloseContentBuilder;
 use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeQueryContentBuilder;
 use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeRefundContentBuilder;
-use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradePagePayContentBuilder;
+use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeWapPayContentBuilder;
 use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeFastpayRefundQueryContentBuilder;
 
 class AliPayH5
@@ -28,7 +28,7 @@ class AliPayH5
         $out_trade_no = trim($data['out_trade_no']);
         $total_amount = trim($data['total_amount']);
 
-        $payRequestBuilder = new AlipayTradePagePayContentBuilder();
+        $payRequestBuilder = new AlipayTradeWapPayContentBuilder();
         $payRequestBuilder->setBody($body);
         $payRequestBuilder->setSubject($subject);
         $payRequestBuilder->setTotalAmount($total_amount);
