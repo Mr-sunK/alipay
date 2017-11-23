@@ -1,12 +1,12 @@
 {
-    "name": "mrK/alipay-h5",
+    "name": "mrk/alipay-h5",
     "description": "alipay h5",
     "keywords": ["h5pay", "alipay"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Mr-sunK",
+            "name": "MrK",
             "email": "1042080686@qq.com"
         }
     ],
