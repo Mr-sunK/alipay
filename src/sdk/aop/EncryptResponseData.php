@@ -1,6 +1,6 @@
 <?php
 
-namespace MrK\AliPayH5\Sdk\Aop;
+namespace Mrk\AliPay\Sdk\Aop;
 
 class EncryptResponseData
 {

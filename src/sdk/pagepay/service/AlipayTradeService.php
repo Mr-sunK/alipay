@@ -1,15 +1,15 @@
 <?php
 
-namespace MrK\AliPayH5\Sdk\Pagepay\Service;
+namespace Mrk\AliPay\Sdk\Pagepay\Service;
 
 use Exception;
-use MrK\AliPayH5\Sdk\Aop\AopClient;
-use MrK\AliPayH5\Sdk\Aop\Request\AlipayTradePagePayRequest;
-use MrK\AliPayH5\Sdk\Aop\Request\AlipayTradeQueryRequest;
-use MrK\AliPayH5\Sdk\Aop\Request\AlipayTradeRefundRequest;
-use MrK\AliPayH5\Sdk\Aop\Request\AlipayTradeCloseRequest;
-use MrK\AliPayH5\Sdk\Aop\Request\AlipayTradeFastpayRefundQueryRequest;
-use MrK\AliPayH5\Sdk\Aop\Request\AlipayDataDataserviceBillDownloadurlQueryRequest;
+use Mrk\AliPay\Sdk\Aop\AopClient;
+use Mrk\AliPay\Sdk\Aop\Request\AlipayTradePagePayRequest;
+use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeQueryRequest;
+use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeRefundRequest;
+use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeCloseRequest;
+use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeFastpayRefundQueryRequest;
+use Mrk\AliPay\Sdk\Aop\Request\AlipayDataDataserviceBillDownloadurlQueryRequest;
 
 class AlipayTradeService
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace MrK\AliPayH5\Sdk\Pagepay\Buildermodel;
+namespace Mrk\AliPay\Sdk\Pagepay\Buildermodel;
 
 class AlipayTradeRefundContentBuilder
 {

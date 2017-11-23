@@ -1,5 +1,5 @@
 <?php
-namespace MrK\AliPayH5\Sdk\Pagepay\Buildermodel;
+namespace Mrk\AliPay\Sdk\Pagepay\Buildermodel;
 /* *
  * 功能：支付宝手机网站支付接口(alipay.trade.wap.pay)接口业务参数封装
  * 版本：2.0

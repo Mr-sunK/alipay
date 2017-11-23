@@ -1,11 +1,11 @@
 <?php
 
-namespace MrK\AliPayH5\Sdk\Aop;
+namespace Mrk\AliPay\Sdk\Aop;
 
 use Exception;
-use MrK\AliPayH5\Sdk\Aop\AopEncrypt;
-use MrK\AliPayH5\Sdk\Aop\SignData;
-use MrK\AliPayH5\Sdk\Aop\EncryptParseItem;
+use Mrk\AliPay\Sdk\Aop\AopEncrypt;
+use Mrk\AliPay\Sdk\Aop\SignData;
+use Mrk\AliPay\Sdk\Aop\EncryptParseItem;
 
 class AopClient
 {
@@ -342,7 +342,7 @@ class AopClient
      *
      * @param $request
      * @param string $httpmethod
-     * @return \MrK\AliPayH5\Sdk\Aop\提交表单HTML文本|string
+     * @return \Mrk\AliPay\Sdk\Aop\提交表单HTML文本|string
      * @throws \Exception
      */
 	public function pageExecute($request, $httpmethod = "POST")
@@ -910,7 +910,7 @@ class AopClient
      * @param $request
      * @param $responseContent
      * @param $responseJSON
-     * @return \MrK\AliPayH5\Sdk\Aop\SignData
+     * @return \Mrk\AliPay\Sdk\Aop\SignData
      */
 	function parserJSONSignData($request, $responseContent, $responseJSON)
     {
@@ -974,7 +974,7 @@ class AopClient
     /**
      * @param $request
      * @param $responseContent
-     * @return \MrK\AliPayH5\Sdk\Aop\SignData
+     * @return \Mrk\AliPay\Sdk\Aop\SignData
      */
 	function parserXMLSignData($request, $responseContent)
     {
@@ -1135,7 +1135,7 @@ class AopClient
     /**
      * @param $request
      * @param $responseContent
-     * @return \MrK\AliPayH5\Sdk\Aop\EncryptParseItem|null
+     * @return \Mrk\AliPay\Sdk\Aop\EncryptParseItem|null
      */
 	private function parserEncryptJSONSignSource($request, $responseContent)
     {
@@ -1157,7 +1157,7 @@ class AopClient
      * @param $responseContent
      * @param $nodeName
      * @param $nodeIndex
-     * @return \MrK\AliPayH5\Sdk\Aop\EncryptParseItem
+     * @return \Mrk\AliPay\Sdk\Aop\EncryptParseItem
      */
 	private function parserEncryptJSONItem($responseContent, $nodeName, $nodeIndex)
     {
@@ -1199,7 +1199,7 @@ class AopClient
     /**
      * @param $request
      * @param $responseContent
-     * @return \MrK\AliPayH5\Sdk\Aop\EncryptParseItem|null
+     * @return \Mrk\AliPay\Sdk\Aop\EncryptParseItem|null
      */
 	private function parserEncryptXMLSignSource($request, $responseContent)
     {
@@ -1221,7 +1221,7 @@ class AopClient
      * @param $responseContent
      * @param $nodeName
      * @param $nodeIndex
-     * @return \MrK\AliPayH5\Sdk\Aop\EncryptParseItem
+     * @return \Mrk\AliPay\Sdk\Aop\EncryptParseItem
      */
 	private function parserEncryptXMLItem($responseContent, $nodeName, $nodeIndex)
     {

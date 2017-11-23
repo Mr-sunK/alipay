@@ -1,7 +1,7 @@
 {
-    "name": "mrk/alipay-h5",
-    "description": "alipay h5",
-    "keywords": ["h5pay", "alipay"],
+    "name": "mrk/alipay",
+    "description": "alipay h5 app web",
+    "keywords": ["h5Pay","appPay","webPay", "aliPay"],
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -12,11 +12,11 @@
     ],
     "minimum-stability": "stable",
     "require": {
-        "PHP": ">= 5.4"
+        "PHP": ">= 5.5"
     },
 	"autoload": {
         "psr-4": {
-            "MrK\\AliPayH5\\" : "src/"
+            "MrK\\AliPay\\" : "src/"
         }
     }
 }
