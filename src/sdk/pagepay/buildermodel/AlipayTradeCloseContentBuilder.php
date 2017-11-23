@@ -1,6 +1,6 @@
 <?php
 
-namespace Saviorlv\Alipay\Sdk\Pagepay\Buildermodel;
+namespace MrK\AliPayH5\Sdk\Pagepay\Buildermodel;
 
 class AlipayTradeCloseContentBuilder
 {

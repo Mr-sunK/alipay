@@ -1,15 +1,15 @@
 <?php
 
-namespace Saviorlv\Alipay;
+namespace MrK\AliPayH5;
 
-use Saviorlv\Alipay\Sdk\Pagepay\Service\AlipayTradeService;
-use Saviorlv\Alipay\Sdk\Pagepay\Buildermodel\AlipayTradeCloseContentBuilder;
-use Saviorlv\Alipay\Sdk\Pagepay\Buildermodel\AlipayTradeQueryContentBuilder;
-use Saviorlv\Alipay\Sdk\Pagepay\Buildermodel\AlipayTradeRefundContentBuilder;
-use Saviorlv\Alipay\Sdk\Pagepay\Buildermodel\AlipayTradePagePayContentBuilder;
-use Saviorlv\Alipay\Sdk\Pagepay\Buildermodel\AlipayTradeFastpayRefundQueryContentBuilder;
+use MrK\AliPayH5\Sdk\Pagepay\Service\AlipayTradeService;
+use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeCloseContentBuilder;
+use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeQueryContentBuilder;
+use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeRefundContentBuilder;
+use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradePagePayContentBuilder;
+use MrK\AliPayH5\Sdk\Pagepay\Buildermodel\AlipayTradeFastpayRefundQueryContentBuilder;
 
-class Alipay
+class AliPayH5
 {
     protected $config;
 

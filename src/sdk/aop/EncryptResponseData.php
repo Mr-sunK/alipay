@@ -1,6 +1,6 @@
 <?php
 
-namespace Saviorlv\Alipay\Sdk\Aop;
+namespace MrK\AliPayH5\Sdk\Aop;
 
 class EncryptResponseData
 {

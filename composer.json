@@ -1,12 +1,12 @@
 {
-    "name": "saviorlv/alipay",
-    "description": "alipay(web)",
-    "keywords": ["webpay", "alipay"],
+    "name": "mrK/alipay-h5",
+    "description": "alipay h5",
+    "keywords": ["h5pay", "alipay"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "saviorlv",
+            "name": "Mr-sunK",
             "email": "1042080686@qq.com"
         }
     ],
@@ -16,7 +16,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "Saviorlv\\Alipay\\" : "src/"
+            "MrK\\AliPayH5\\" : "src/"
         }
     }
 }

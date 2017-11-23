@@ -1,6 +1,6 @@
 <?php
 
-namespace Saviorlv\Alipay\Sdk\Aop\Request;
+namespace MrK\AliPayH5\Sdk\Aop\Request;
 
 class AlipayTradeFastpayRefundQueryRequest
 {
