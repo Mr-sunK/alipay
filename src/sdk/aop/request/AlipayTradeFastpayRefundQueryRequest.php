@@ -1,5 +1,4 @@
 <?php
-
 namespace Mrk\AliPay\Sdk\Aop\Request;
 
 class AlipayTradeFastpayRefundQueryRequest

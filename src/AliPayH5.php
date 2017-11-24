@@ -1,5 +1,4 @@
 <?php
-
 namespace Mrk\AliPay;
 
 use Mrk\AliPay\Sdk\Pagepay\Service\AlipayTradeService;
@@ -35,7 +34,7 @@ class AliPayH5
         $payRequestBuilder->setOutTradeNo($out_trade_no);
 
         $aop = new AlipayTradeService($this->config);
-        $response = $aop->pagePay($payRequestBuilder, $this->config['return_url'], $this->config['notify_url']);
+        $response = $aop->WapPay($payRequestBuilder, $this->config['return_url'], $this->config['notify_url']);
 
         return $response;
     }

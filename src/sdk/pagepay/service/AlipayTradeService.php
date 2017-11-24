@@ -1,5 +1,4 @@
 <?php
-
 namespace Mrk\AliPay\Sdk\Pagepay\Service;
 
 use Exception;
@@ -10,6 +9,7 @@ use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeRefundRequest;
 use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeCloseRequest;
 use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeFastpayRefundQueryRequest;
 use Mrk\AliPay\Sdk\Aop\Request\AlipayDataDataserviceBillDownloadurlQueryRequest;
+use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeWapPayRequest;
 
 class AlipayTradeService
 {
@@ -69,9 +69,30 @@ class AlipayTradeService
     function pagePay($builder, $return_url, $notify_url)
     {
         $biz_content = $builder->getBizContent();
-        $this->writeLog($biz_content);
 
         $request = new AlipayTradePagePayRequest();
+        $request->setNotifyUrl($notify_url);
+        $request->setReturnUrl($return_url);
+        $request->setBizContent($biz_content);
+
+        // 首先调用支付api
+        $response = $this->aopclientRequestExecute($request, TRUE);
+        // $response = $response->alipay_trade_wap_pay_response;
+        return $response;
+    }
+
+    /**
+     * @param $builder
+     * @param $return_url
+     * @param $notify_url
+     * @return bool|mixed|\Mrk\AliPay\Sdk\Aop\提交表单HTML文本|\SimpleXMLElement|string
+     */
+    function WapPay($builder, $return_url, $notify_url)
+    {
+        $biz_content = $builder->getBizContent();
+        $this->writeLog($biz_content);
+
+        $request = new AlipayTradeWapPayRequest();
         $request->setNotifyUrl($notify_url);
         $request->setReturnUrl($return_url);
         $request->setBizContent($biz_content);
@@ -219,13 +240,5 @@ class AlipayTradeService
         $result = $aop->rsaCheckV1($arr, $this->alipay_public_key, $this->signtype);
 
         return $result;
-    }
-
-    /**
-     * 打印日志
-     */
-    function writeLog($text)
-    {
-        file_put_contents(storage_path('logs/alipay.log'), date("Y-m-d H:i:s")."  ".$text."\r\n", FILE_APPEND);
     }
 }
