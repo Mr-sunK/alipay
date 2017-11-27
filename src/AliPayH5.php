@@ -1,12 +1,12 @@
 <?php
-namespace Mrk\AliPay;
+namespace mrk;
 
-use Mrk\AliPay\Sdk\Pagepay\Service\AlipayTradeService;
-use Mrk\AliPay\Sdk\Pagepay\Buildermodel\AlipayTradeCloseContentBuilder;
-use Mrk\AliPay\Sdk\Pagepay\Buildermodel\AlipayTradeQueryContentBuilder;
-use Mrk\AliPay\Sdk\Pagepay\Buildermodel\AlipayTradeRefundContentBuilder;
-use Mrk\AliPay\Sdk\Pagepay\Buildermodel\AlipayTradeWapPayContentBuilder;
-use Mrk\AliPay\Sdk\Pagepay\Buildermodel\AlipayTradeFastpayRefundQueryContentBuilder;
+use mrk\sdk\pagepay\Service\AlipayTradeService;
+use mrk\sdk\pagepay\Buildermodel\AlipayTradeCloseContentBuilder;
+use mrk\sdk\pagepay\Buildermodel\AlipayTradeQueryContentBuilder;
+use mrk\sdk\pagepay\Buildermodel\AlipayTradeRefundContentBuilder;
+use mrk\sdk\pagepay\Buildermodel\AlipayTradeWapPayContentBuilder;
+use mrk\sdk\pagepay\Buildermodel\AlipayTradeFastpayRefundQueryContentBuilder;
 
 class AliPayH5
 {

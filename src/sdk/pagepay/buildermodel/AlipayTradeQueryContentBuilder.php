@@ -1,5 +1,5 @@
 <?php
-namespace Mrk\AliPay\Sdk\Pagepay\Buildermodel;
+namespace mrk\sdk\pagepay\buildermodel;
 
 class AlipayTradeQueryContentBuilder
 {

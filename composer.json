@@ -16,7 +16,7 @@
     },
 	"autoload": {
         "psr-4": {
-            "MrK\\AliPay\\" : "src/"
+            "mrk\\" : "src/"
         }
     }
 }

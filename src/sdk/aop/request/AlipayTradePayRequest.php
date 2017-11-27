@@ -1,5 +1,5 @@
 <?php
-namespace Mrk\AliPay\Sdk\Aop\Request;
+namespace mrk\sdk\aop\request;
 /**
  * ALIPAY API: alipay.trade.pay request
  *

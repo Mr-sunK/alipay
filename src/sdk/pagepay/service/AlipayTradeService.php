@@ -1,15 +1,15 @@
 <?php
-namespace Mrk\AliPay\Sdk\Pagepay\Service;
+namespace mrk\sdk\pagepay\Service;
 
 use Exception;
-use Mrk\AliPay\Sdk\Aop\AopClient;
-use Mrk\AliPay\Sdk\Aop\Request\AlipayTradePagePayRequest;
-use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeQueryRequest;
-use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeRefundRequest;
-use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeCloseRequest;
-use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeFastpayRefundQueryRequest;
-use Mrk\AliPay\Sdk\Aop\Request\AlipayDataDataserviceBillDownloadurlQueryRequest;
-use Mrk\AliPay\Sdk\Aop\Request\AlipayTradeWapPayRequest;
+use mrk\sdk\aop\AopClient;
+use mrk\sdk\aop\Request\AlipayTradePagePayRequest;
+use mrk\sdk\aop\Request\AlipayTradeQueryRequest;
+use mrk\sdk\aop\Request\AlipayTradeRefundRequest;
+use mrk\sdk\aop\Request\AlipayTradeCloseRequest;
+use mrk\sdk\aop\Request\AlipayTradeFastpayRefundQueryRequest;
+use mrk\sdk\aop\Request\AlipayDataDataserviceBillDownloadurlQueryRequest;
+use mrk\sdk\aop\Request\AlipayTradeWapPayRequest;
 
 class AlipayTradeService
 {
@@ -85,7 +85,7 @@ class AlipayTradeService
      * @param $builder
      * @param $return_url
      * @param $notify_url
-     * @return bool|mixed|\Mrk\AliPay\Sdk\Aop\提交表单HTML文本|\SimpleXMLElement|string
+     * @return bool|mixed|\mrk\sdk\aop\提交表单HTML文本|\SimpleXMLElement|string
      */
     function WapPay($builder, $return_url, $notify_url)
     {

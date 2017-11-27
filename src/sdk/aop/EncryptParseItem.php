@@ -1,5 +1,5 @@
 <?php
-namespace Mrk\AliPay\Sdk\Aop;
+namespace mrk\sdk\aop;
 
 class EncryptParseItem
 {
