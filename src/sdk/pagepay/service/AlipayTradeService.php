@@ -31,7 +31,7 @@ class AlipayTradeService
 
     function __construct($config)
     {
-        $this->gateway_url = $config['gateway_url'];
+        $this->gateway_url = $config['gatewayUrl'];
         $this->appid = $config['app_id'];
         $this->private_key = $config['merchant_private_key'];
         $this->alipay_public_key = $config['alipay_public_key'];
