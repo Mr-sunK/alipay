@@ -241,4 +241,8 @@ class AlipayTradeService
 
         return $result;
     }
+
+    function writeLog(){
+
+    }
 }
