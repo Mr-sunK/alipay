@@ -77,7 +77,7 @@ class AlipayTradeService
         $request->setBizContent($biz_content);
 
         // 首先调用支付api
-        $response = $this->aopclientRequestExecute($request, TRUE);
+        $response = $this->aopclientRequestExecute($request, 'page');
         // $response = $response->alipay_trade_page_pay_response;
         return $response;
     }
@@ -99,7 +99,7 @@ class AlipayTradeService
         $request->setBizContent($biz_content);
 
         // 首先调用支付api
-        $response = $this->aopclientRequestExecute($request, TRUE);
+        $response = $this->aopclientRequestExecute($request);
         // $response = $response->alipay_trade_wap_pay_response;
         return $response;
     }
@@ -121,7 +121,7 @@ class AlipayTradeService
         $request->setBizContent($biz_content);
 
         // 首先调用支付api
-        $response = $this->aopclientRequestExecute($request, TRUE);
+        $response = $this->aopclientRequestExecute($request, 'app');
         // $response = $response->alipay_trade_app_pay_response;
         return $response;
     }
@@ -132,7 +132,7 @@ class AlipayTradeService
      * @param $ispage
      * @return $response
      */
-    function aopclientRequestExecute($request, $is_page = FALSE)
+    function aopclientRequestExecute($request, $pay_type = 'normal')
     {
         $aop = new AopClient();
         $aop->gatewayUrl = $this->gateway_url;
@@ -145,9 +145,12 @@ class AlipayTradeService
         $aop->signType = $this->signtype;
         $aop->debugInfo = TRUE;
 
-        if ($is_page) {
+        if ($pay_type == 'page') {
             $result = $aop->pageExecute($request, "post");
             echo $result;
+        } elseif ($pay_type == 'app'){
+            $result = $aop->sdkExecute($request);
+            echo htmlentities($result);
         } else {
             $result = $aop->execute($request);
         }
