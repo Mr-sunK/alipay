@@ -66,8 +66,9 @@ class AliPay
 
         return $response;
     }
+
     /**
-     * pc端支付
+     * app
      * @param $data
      * @return bool|mixed|sdk\aop\提交表单HTML文本|\SimpleXMLElement|string
      */
