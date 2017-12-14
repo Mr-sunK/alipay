@@ -1,6 +1,8 @@
 <?php
 namespace mrk;
 
+use mrk\sdk\pagepay\buildermodel\AlipayTradeAppPayContentBuilder;
+use mrk\sdk\pagepay\buildermodel\AlipayTradePagePayContentBuilder;
 use mrk\sdk\pagepay\Service\AlipayTradeService;
 use mrk\sdk\pagepay\Buildermodel\AlipayTradeCloseContentBuilder;
 use mrk\sdk\pagepay\Buildermodel\AlipayTradeQueryContentBuilder;
@@ -8,7 +10,7 @@ use mrk\sdk\pagepay\Buildermodel\AlipayTradeRefundContentBuilder;
 use mrk\sdk\pagepay\Buildermodel\AlipayTradeWapPayContentBuilder;
 use mrk\sdk\pagepay\Buildermodel\AlipayTradeFastpayRefundQueryContentBuilder;
 
-class AliPayH5
+class AliPay
 {
     protected $config;
 
@@ -18,9 +20,11 @@ class AliPayH5
     }
 
     /**
-     * Pay the order.
+     * H5手机网站
+     * @param $data
+     * @return bool|mixed|sdk\aop\提交表单HTML文本|\SimpleXMLElement|string
      */
-    public function pay($data)
+    public function wapPay($data)
     {
         $subject = trim($data['title']);
         $body = trim(isset($data['description']) ? $data['description'] : '');
@@ -34,11 +38,57 @@ class AliPayH5
         $payRequestBuilder->setOutTradeNo($out_trade_no);
 
         $aop = new AlipayTradeService($this->config);
-        $response = $aop->WapPay($payRequestBuilder, $this->config['return_url'], $this->config['notify_url']);
+        $response = $aop->wapPay($payRequestBuilder, $this->config['return_url'], $this->config['notify_url']);
 
         return $response;
     }
 
+    /**
+     * pc端支付
+     * @param $data
+     * @return bool|mixed|sdk\aop\提交表单HTML文本|\SimpleXMLElement|string
+     */
+    public function pagePay($data)
+    {
+        $subject = trim($data['title']);
+        $body = trim(isset($data['description']) ? $data['description'] : '');
+        $out_trade_no = trim($data['out_trade_no']);
+        $total_amount = trim($data['total_amount']);
+
+        $payRequestBuilder = new AlipayTradePagePayContentBuilder();
+        $payRequestBuilder->setBody($body);
+        $payRequestBuilder->setSubject($subject);
+        $payRequestBuilder->setTotalAmount($total_amount);
+        $payRequestBuilder->setOutTradeNo($out_trade_no);
+
+        $aop = new AlipayTradeService($this->config);
+        $response = $aop->pagePay($payRequestBuilder, $this->config['return_url'], $this->config['notify_url']);
+
+        return $response;
+    }
+    /**
+     * pc端支付
+     * @param $data
+     * @return bool|mixed|sdk\aop\提交表单HTML文本|\SimpleXMLElement|string
+     */
+    public function appPay($data)
+    {
+        $subject = trim($data['title']);
+        $body = trim(isset($data['description']) ? $data['description'] : '');
+        $out_trade_no = trim($data['out_trade_no']);
+        $total_amount = trim($data['total_amount']);
+
+        $payRequestBuilder = new AlipayTradeAppPayContentBuilder();
+        $payRequestBuilder->setBody($body);
+        $payRequestBuilder->setSubject($subject);
+        $payRequestBuilder->setTotalAmount($total_amount);
+        $payRequestBuilder->setOutTradeNo($out_trade_no);
+
+        $aop = new AlipayTradeService($this->config);
+        $response = $aop->appPay($payRequestBuilder, $this->config['return_url'], $this->config['notify_url']);
+
+        return $response;
+    }
     /**
      * Query the order details.
      */
