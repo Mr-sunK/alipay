@@ -3,6 +3,7 @@ namespace mrk\sdk\pagepay\Service;
 
 use Exception;
 use mrk\sdk\aop\AopClient;
+use mrk\sdk\aop\request\AlipayTradeAppPayRequest;
 use mrk\sdk\aop\Request\AlipayTradePagePayRequest;
 use mrk\sdk\aop\Request\AlipayTradeQueryRequest;
 use mrk\sdk\aop\Request\AlipayTradeRefundRequest;
@@ -77,7 +78,7 @@ class AlipayTradeService
 
         // 首先调用支付api
         $response = $this->aopclientRequestExecute($request, TRUE);
-        // $response = $response->alipay_trade_wap_pay_response;
+        // $response = $response->alipay_trade_page_pay_response;
         return $response;
     }
 
@@ -87,7 +88,7 @@ class AlipayTradeService
      * @param $notify_url
      * @return bool|mixed|\mrk\sdk\aop\提交表单HTML文本|\SimpleXMLElement|string
      */
-    function WapPay($builder, $return_url, $notify_url)
+    function wapPay($builder, $return_url, $notify_url)
     {
         $biz_content = $builder->getBizContent();
         $this->writeLog($biz_content);
@@ -100,6 +101,28 @@ class AlipayTradeService
         // 首先调用支付api
         $response = $this->aopclientRequestExecute($request, TRUE);
         // $response = $response->alipay_trade_wap_pay_response;
+        return $response;
+    }
+
+    /**
+     * @param $builder
+     * @param $return_url
+     * @param $notify_url
+     * @return bool|mixed|\mrk\sdk\aop\提交表单HTML文本|\SimpleXMLElement|string
+     */
+    function appPay($builder, $return_url, $notify_url)
+    {
+        $biz_content = $builder->getBizContent();
+        $this->writeLog($biz_content);
+
+        $request = new AlipayTradeAppPayRequest();
+        $request->setNotifyUrl($notify_url);
+        $request->setReturnUrl($return_url);
+        $request->setBizContent($biz_content);
+
+        // 首先调用支付api
+        $response = $this->aopclientRequestExecute($request, TRUE);
+        // $response = $response->alipay_trade_app_pay_response;
         return $response;
     }
 
